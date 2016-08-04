@@ -228,10 +228,10 @@ class ThreadingServer(ThreadingMixIn, HTTPServer):
     pass
     
     
-def run(port=8080, doc_root=os.getcwd()):
+def run(port=8888, doc_root=os.getcwd()+"/www"):
     serveraddr = ('', port)
     serv = ThreadingServer(serveraddr, get_handler(doc_root))
-    print 'Server Started at port:', port
+    print 'Server Started at port:', port,' doc_root ', doc_root
     serv.serve_forever()
 
 def test():
